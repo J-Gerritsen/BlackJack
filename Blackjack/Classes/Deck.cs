@@ -23,5 +23,25 @@ namespace BlackJack.Classes
                 }
             }
         }
+
+        public void Shuffle()
+        {
+            Random random = new Random();
+            for (int i = 0; i < cards.Count; i++)
+            {
+                int randomPlace = random.Next(i, cards.Count);
+                Card storedCard = cards[i];
+                cards[i] = cards[randomPlace];
+                cards[randomPlace] = storedCard;
+            }
+        }
+
+        public void PrintDeck()
+        {
+            foreach (Card card in cards)
+            {
+                Console.WriteLine(card);
+            }
+        }
     }
 }

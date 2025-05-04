@@ -43,5 +43,17 @@ namespace BlackJack.Classes
                 Console.WriteLine(card);
             }
         }
+
+        public Card DrawCard()
+        {
+            if (cards.Count <= 0)
+            {
+                return null;
+            }
+            Card drawnCard = cards[0];
+            cards.RemoveAt(0);
+            return drawnCard;
+
+        }
     }
 }

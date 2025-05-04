@@ -66,5 +66,10 @@ namespace BlackJack.Classes
         {
             return this.faceValue + " Of " + this.suit;
         }
+
+        internal void Add(Card card)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

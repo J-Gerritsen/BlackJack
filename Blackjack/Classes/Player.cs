@@ -27,5 +27,15 @@ namespace BlackJack.Classes
         {
             hasStood = true;
         }
+
+        public int GetTotalValue()
+        {
+            return hand.CalculateValue();
+        }
+
+        public void ShowHand()
+        {
+            hand.ShowHand("Player");
+        }
     }
 }

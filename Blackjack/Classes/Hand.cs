@@ -30,6 +30,16 @@ namespace BlackJack.Classes
             return total;
         }
 
+        public void ShowHand(string ownerName)
+        {
+            Console.WriteLine($"{ownerName}'s Hand:");
+            foreach (Card card in cards)
+            {
+                Console.WriteLine(card);
+            }
+            Console.WriteLine($"Total Value: {CalculateValue()}");
+        }
+
         public List<Card> GetCards() => cards;
     }
 }

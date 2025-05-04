@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackJack.Classes
-{
-    public enum Suits
-    {
+namespace BlackJack.Classes {
+    public enum Suits {
         CLUBS,
         DIAMONDS,
         HEARTS,
         SPADES
     }
 
-    public enum FaceValues
-    {
+    public enum FaceValues {
         ACE = 1,
         TWO,
         THREE,
@@ -30,8 +27,7 @@ namespace BlackJack.Classes
         QUEEN,
         KING
     }
-    class Card
-    {
+    class Card {
         Suits suit;
         FaceValues faceValue;
         int value;
@@ -41,12 +37,10 @@ namespace BlackJack.Classes
         public int Value { get { return value; } }
         //public Image Image { get { return img; } }
 
-        public Card(Suits suit, FaceValues faceValue)
-        {
+        public Card(Suits suit, FaceValues faceValue) {
             this.suit = suit;
             this.faceValue = faceValue;
-            switch (faceValue)
-            {
+            switch (faceValue) {
                 case FaceValues.ACE:
                     this.value = 11;
                     break;
@@ -62,9 +56,12 @@ namespace BlackJack.Classes
             }
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return this.faceValue + " Of " + this.suit;
+        }
+
+        internal void Add(Card card) {
+            throw new NotImplementedException();
         }
     }
 }

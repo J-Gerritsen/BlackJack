@@ -1,4 +1,5 @@
 using BlackJack.Classes;
+using System.Numerics;
 
 namespace Blackjack
 {
@@ -8,18 +9,13 @@ namespace Blackjack
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-
-            Deck deck = new Deck();
-            deck.PrintDeck();
-            Console.WriteLine("\n");
-            deck.Shuffle();
-            deck.PrintDeck();
+            //ApplicationConfiguration.Initialize();
+            //Application.Run(new Form1());
+            Game game = new Game();
+            game.Start();
         }
     }
 }

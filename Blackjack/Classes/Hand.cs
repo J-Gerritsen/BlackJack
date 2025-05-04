@@ -5,24 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace BlackJack.Classes
-{
-    class Hand
-    {
+namespace BlackJack.Classes {
+    class Hand {
         private List<Card> cards = new List<Card>();
 
-        public void AddCard(Card card)
-        {
+        public void AddCard(Card card) {
             cards.Add(card);
         }
 
-        public int CalculateValue()
-        {
+        public int CalculateValue() {
             int total = cards.Sum(card => card.Value);
 
             int aceCount = cards.Count(card => card.Value == 11);
-            while (total > 21 && aceCount > 0)
-            {
+            while (total > 21 && aceCount > 0) {
                 total -= 10;
                 aceCount--;
             }
@@ -30,11 +25,9 @@ namespace BlackJack.Classes
             return total;
         }
 
-        public void ShowHand(string ownerName)
-        {
+        public void ShowHand(string ownerName) {
             Console.WriteLine($"{ownerName}'s Hand:");
-            foreach (Card card in cards)
-            {
+            foreach (Card card in cards) {
                 Console.WriteLine(card);
             }
             Console.WriteLine($"Total Value: {CalculateValue()}");

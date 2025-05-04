@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace BlackJack.Classes
-{
-    class Player
-    {
+namespace BlackJack.Classes {
+    class Player {
         private Hand hand = new Hand();
 
         bool hasStood = false;
@@ -17,24 +15,20 @@ namespace BlackJack.Classes
         public bool HasBlackjack => hand.CalculateValue() == 21;
         public bool IsBust => hand.CalculateValue() > 21;
 
-        public void Hit(Card card)
-        {
+        public void Hit(Card card) {
             if (!hasStood)
                 hand.AddCard(card);
         }
 
-        public void Stand()
-        {
+        public void Stand() {
             hasStood = true;
         }
 
-        public int GetTotalValue()
-        {
+        public int GetTotalValue() {
             return hand.CalculateValue();
         }
 
-        public void ShowHand()
-        {
+        public void ShowHand() {
             hand.ShowHand("Player");
         }
     }

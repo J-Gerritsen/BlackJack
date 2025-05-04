@@ -4,21 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackJack.Classes
-{
-    class Game
-    {
+namespace BlackJack.Classes {
+    class Game {
         private List<Player> playerCount;
         private Deck deck;
 
-        public Game()
-        {
+        public Game() {
             playerCount = new List<Player>();
             deck = new Deck();
         }
 
-        public void Start()
-        {
+        public void Start() {
             deck.Shuffle();
 
             Player player1 = new Player();
@@ -27,19 +23,16 @@ namespace BlackJack.Classes
 
             playerCount.Add(player1);
 
-            while (true)
-            {
+            while (true) {
                 player1.ShowHand();
                 int total = player1.GetTotalValue();
 
-                if (player1.IsBust)
-                {
+                if (player1.IsBust) {
                     Console.WriteLine("You are busted");
                     break;
                 }
 
-                if (player1.HasBlackjack)
-                {
+                if (player1.HasBlackjack) {
                     Console.WriteLine("Blackjack!");
                     break;
                 }
@@ -47,18 +40,13 @@ namespace BlackJack.Classes
                 Console.Write("Do you want to Hit or Stand? ");
                 string input = Console.ReadLine().ToUpper();
 
-                if (input == "HIT")
-                {
+                if (input == "HIT") {
                     player1.Hit(deck.DrawCard());
-                }
-                else if (input == "STAND")
-                {
+                } else if (input == "STAND") {
                     player1.Stand();
                     Console.WriteLine("You chose stand.");
                     break;
-                }
-                else
-                {
+                } else {
                     Console.WriteLine("Choose either HIT or STAND.");
                 }
             }

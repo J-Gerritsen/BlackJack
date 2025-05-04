@@ -1,3 +1,5 @@
+using BlackJack.Classes;
+
 namespace Blackjack
 {
     internal static class Program
@@ -12,6 +14,12 @@ namespace Blackjack
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+            Deck deck = new Deck();
+            deck.PrintDeck();
+            Console.WriteLine("\n");
+            deck.Shuffle();
+            deck.PrintDeck();
         }
     }
 }
